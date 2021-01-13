@@ -13,6 +13,9 @@ const FETCH_FAILED = 3;
 
 
 const Home: React.FC = () => {
+
+  const { REACT_APP_API_BASEURL: API_BASEURL } = process.env;
+
   // Retient l'état actuel de la liste de tâches
   const [todos, setTodos] = useState<ITodo[]>([]);
   // Retient l'étape actuelle de la récupération de données
@@ -25,7 +28,7 @@ const Home: React.FC = () => {
       setFetchState(FETCH_PENDING);
 
       // Envoie une requête au serveur permettant de récupérer la liste des tâches
-      fetch('http://localhost:3000/todos')
+      fetch(`${API_BASEURL}/todos`)
       .then(
         response => {
           // Si la requête a produit une erreur
@@ -65,7 +68,7 @@ const Home: React.FC = () => {
   // des tâches est parfaitement synchronisée avec l'état des données sur le serveur)
   const createTodo = (todo: ITodo) => {
     // Envoie une requête...
-    fetch('http://localhost:3000/todos', {
+    fetch(`${API_BASEURL}/todos`, {
       // ...en méthode POST...
       method: 'POST',
       // ...contenant des donneés en JSON...
