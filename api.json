@@ -1,0 +1,19 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "text": "Faire les courses",
+      "done": false
+    },
+    {
+      "id": 2,
+      "text": "Préparer le repas",
+      "done": false
+    },
+    {
+      "id": 3,
+      "text": "Entraîner mes Pokémon",
+      "done": false
+    }
+  ]
+}

@@ -27,7 +27,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server:start": "json-server api.json"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -45,7 +46,8 @@
     ]
   },
   "devDependencies": {
-    "@capacitor/cli": "2.4.6"
+    "@capacitor/cli": "2.4.6",
+    "json-server": "^0.16.3"
   },
   "description": "An Ionic project"
 }
