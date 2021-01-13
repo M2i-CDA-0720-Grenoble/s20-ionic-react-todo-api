@@ -1,16 +1,14 @@
 import { IonItem, IonLabel, IonInput, IonButton } from "@ionic/react";
-import React, { FC, useState } from "react";
-import { ITodo } from "../models";
+import React, { FC, useContext, useState } from "react";
+import DataContext from "../contexts/DataContext";
 
-interface AddTodoFormProps {
-  createTodo: (todo: ITodo) => void,
-}
+const AddTodoForm: FC = () => {
+  const { actions } = useContext(DataContext);
 
-const AddTodoForm: FC<AddTodoFormProps> = ({ createTodo }) => {
   const [text, setText] = useState('');
 
   const handleClick = () => {
-    createTodo({
+    actions.createTodo({
       text,
       done: false,
     });
