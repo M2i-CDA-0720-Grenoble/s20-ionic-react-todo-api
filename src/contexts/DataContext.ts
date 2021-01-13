@@ -1,9 +1,10 @@
 import { createContext } from "react";
 import { ITodo } from "../models";
+import RequestState from "../request-state";
 
 export interface DataContextValue {
   todos: ITodo[],
-  fetchState: number,
+  fetchState: RequestState,
   actions?: {
     addTodo: (todo: ITodo) => void,
     removeTodo: (id: number) => void,

@@ -1,10 +1,9 @@
 import { IonContent, IonHeader, IonPage, IonSpinner, IonTitle, IonToast, IonToolbar } from '@ionic/react';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import AddTodoForm from '../components/AddTodoForm';
-import { FETCH_PENDING, FETCH_SUCCESFUL, FETCH_FAILED } from '../components/DataContainer';
 import TodoList from '../components/TodoList';
 import DataContext from '../contexts/DataContext';
-import { ITodo } from '../models';
+import RequestState from '../request-state';
 import './Home.css';
 
 
@@ -16,15 +15,15 @@ const Home: React.FC = () => {
   const displayContent = () => {
     switch (fetchState) {
       // Si les données sont en cours de récupération, affiche un indicateur de chargement
-      case FETCH_PENDING:
+      case RequestState.Pending:
         return <IonSpinner />;
       
       // Si les données ont été récupérées avec succès, affiche la liste des tâches
-      case FETCH_SUCCESFUL:
+      case RequestState.Success:
         return <TodoList todos={todos} />;
 
       // Si la récupération des données a échoué, affiche une alerte
-      case FETCH_FAILED:
+      case RequestState.Failed:
         return (
           <IonToast
             isOpen={true}
