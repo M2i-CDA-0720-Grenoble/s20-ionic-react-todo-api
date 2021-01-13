@@ -1,5 +1,5 @@
 export default interface ITodo {
-  id: number,
+  id?: number,
   text: string,
   done: boolean,
 }
