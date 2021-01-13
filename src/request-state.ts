@@ -1,4 +1,4 @@
-// Crée un type particulier permettant de d'écrirel l'état d'avancement
+// Crée un type particulier permettant de décrire l'état d'avancement
 // d'une requête asynchrone
 enum RequestState {
   // Pas encore envoyée
