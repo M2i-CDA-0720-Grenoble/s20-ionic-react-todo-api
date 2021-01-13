@@ -1,14 +1,17 @@
 import { IonItem, IonLabel, IonInput, IonButton } from "@ionic/react";
-import React, { FC, useContext, useState } from "react";
-import DataContext from "../contexts/DataContext";
+import React, { FC, useState } from "react";
+import { useCreateTodo } from "../hooks";
+
 
 const AddTodoForm: FC = () => {
-  const { actions } = useContext(DataContext);
-
+  // Génère une fonction permettant de créer une nouvelle tâche
+  const { createTodo } = useCreateTodo();
+  // Retient l'état actuel du champ texte
   const [text, setText] = useState('');
 
+  // Crée une fonction permettant d'ajouter une nouvelle tâche lorsqu'on clique sur le bouton
   const handleClick = () => {
-    actions.createTodo({
+    createTodo({
       text,
       done: false,
     });

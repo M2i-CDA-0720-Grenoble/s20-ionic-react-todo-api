@@ -4,15 +4,15 @@ import { ITodo } from "../models";
 export interface DataContextValue {
   todos: ITodo[],
   fetchState: number,
-  actions: {
-    [actionName: string]: Function,
+  actions?: {
+    addTodo: (todo: ITodo) => void,
+    removeTodo: (id: number) => void,
   }
 }
 
 const defaultValue: DataContextValue = {
   todos: [],
   fetchState: 0,
-  actions: {},
 }
 
 const DataContext = createContext(defaultValue);
