@@ -1,0 +1,7 @@
+{
+  "name": "ionic-react-todo-api",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
